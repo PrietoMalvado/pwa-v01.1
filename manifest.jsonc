@@ -1,0 +1,20 @@
+{
+    "name":"PWA Fecha y hora",
+    "short_name":"PWA",
+    "Start url":".",
+    "display":"standalone",
+    "background_color":"#0000",
+    "theme_color":"#fff",
+    "icons":[
+        {
+            "src":"icon.png",
+            "size":"192x192",
+            "type":"image/png"
+        },
+        {
+            "src":"icon2.png",
+            "size":"512x512",
+            "type":"image/png"
+        }
+    ]
+}

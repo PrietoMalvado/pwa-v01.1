@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.jsonc">
+    <title>Fecha y hora</title>
+</head>
+<body>
+    <h1>Fecha y hora</h1>
+    <div id="datetime"></div>
+    <script>
+        function updateDateTime(){
+            const now = new Date();
+            console.log(now);
+            document.getElementById('datetime').textContent = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+    <script>
+        console.log(navigator.serviceWorker);// impimir navigator.serviceWoeker
+        if ('serviceWorker' in navigator){//si serviceWorker en navigator entonces
+            navigator.serviceWorker.register('/service-worker.js')//se registra el services worker disenado
+                .then ((registration) => {//si se logra la registracion imprimir mensaje de que se efectuo
+                    console.log('service worker registered')
+                }).catch((error) => {//en caso contrario o error mediante excepcion
+                    console.log('service worker failed', error)//ha fallado
+                });
+        }
+    </script>
+</body>
+</html>
